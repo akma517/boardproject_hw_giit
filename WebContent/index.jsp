@@ -10,6 +10,7 @@
 <body>
 <h1>홈페이지</h1>
 <%
+	request.setCharacterEncoding("utf-8");
 	System.out.println("index.jsp 로직 진입");	
 
 	// session은 참조 타입만 들어간다.

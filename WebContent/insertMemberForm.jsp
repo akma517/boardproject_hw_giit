@@ -9,9 +9,8 @@
 </head>
 <body>
 <%
-	
+	/* 사전 작업 */
 	request.setCharacterEncoding("utf-8");
-
 	System.out.println("insertMemberForm.jsp 로직 진입");
 
 	/* 인증 방어 코드 : 로그인 전에만 페이지 열람 가능 */

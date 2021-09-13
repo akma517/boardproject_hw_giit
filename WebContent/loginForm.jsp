@@ -9,11 +9,13 @@
 </head>
 <body>
 <%
+	/* 사전작업 */
+	request.setCharacterEncoding("utf-8");
+	System.out.println("loginForm.jsp 로직 진입");	
+
 	/* 인증 방어 코드 : 로그인 전에만 페이지 열람 가능 */
 	// 만약 로그인한 멤버가 loginForm.jsp에 접근하려고 할 시, index.jsp 페이지로 강제 이동시킨다.
 	Member member = (Member)session.getAttribute("loginMember");
-	
-	System.out.println("loginForm.jsp 로직 진입");	
 	
 	if (member != null) {
 		response.sendRedirect("./index.jsp");
