@@ -12,7 +12,7 @@
 	Member member = (Member)session.getAttribute("loginMember");
 	
 	if (member == null) {
-		response.sendRedirect("./index.jsp");
+		response.sendRedirect(request.getContextPath() + "/index.jsp");
 		System.out.println("[debug] deleteMemberAction.jsp => index.jsp로 강제 이동: 로그인 하지 않은 멤버의 강제 접근을 막았습니다.");
 		return; 
 	}
@@ -24,7 +24,7 @@
 	
 	// 탈퇴 정보 유효성 검사
 	if (memberPw == null) {
-		response.sendRedirect("./deleteMemberForm.jsp");
+		response.sendRedirect(request.getContextPath() + "/member/deleteMemberForm.jsp");
 		System.out.println("[debug]  deleteMemberAction.jsp => deleteMemberForm.jsp로 강제 이동: 탈퇴 정보에 null값이 있어 이전 페이지로 돌려보냈습니다.");
 		return; 
 	}
@@ -42,16 +42,14 @@
 	if (confirm==1) {
 		
 		System.out.println("[debug] deleteMemberAction.jsp => 회원탈퇴 성공");
-		response.sendRedirect("./logOut.jsp");
-		
+		response.sendRedirect(request.getContextPath() + "/member/logOut.jsp");
 		
 		System.out.println("[debug] deleteMemberAction.jsp 로직 종료");
 		
 		return;
 	} else {
 		System.out.println("[debug] deleteMemberAction.jsp => 회원탈퇴 실패 : 입력 정보를 다시 확인해 주세요.");
-		response.sendRedirect("./deleteMemberForm.jsp");
-		
+		response.sendRedirect(request.getContextPath() + "/member/deleteMemberForm.jsp");
 		
 		System.out.println("[debug] deleteMemberAction.jsp 로직 종료");
 		

@@ -13,7 +13,7 @@
 	Member member = (Member)session.getAttribute("loginMember");
 	
 	if (member == null) {
-		response.sendRedirect("./index.jsp");
+		response.sendRedirect(request.getContextPath() + "/index.jsp");
 		System.out.println("[debug] updateMemberAction.jsp => index.jsp로 강제 이동: 로그인 하지 않은 멤버의 강제 접근을 막았습니다.");
 		return; 
 	}
@@ -31,7 +31,7 @@
 	
 	// 가입 정보 유효성 검사
 	if (memberName == null || memberAgeString == null || memberGender == null || memberPw == null) {
-		response.sendRedirect("./updateMemberForm.jsp");
+		response.sendRedirect(request.getContextPath() + "/member/updateMemberForm.jsp");
 		System.out.println("[debug] updateMemberAction.jsp => updatetMemberForm.jsp로 강제 이동: 회원 정보 수정값에 null값이 있어 이전 페이지로 돌려보냈습니다.");
 		return; 
 	}
@@ -59,7 +59,7 @@
 	if (confirm==1) {
 		
 		System.out.println("[debug] updateMemberAction.jsp => 회원정보 수정 성공");
-		response.sendRedirect("./selectMemberOne.jsp");
+		response.sendRedirect(request.getContextPath() + "/member/selectMemberOne.jsp");
 		
 		System.out.println("[debug] updateMemberAction.jsp 로직 종료");
 		
@@ -67,7 +67,7 @@
 	} else {
 		
 		System.out.println("[debug] updateMemberAction.jsp => 회원정보 수정 실패 : 입력 정보를 다시 확인해 주세요.");
-		response.sendRedirect("./selectMemberOne.jsp");
+		response.sendRedirect(request.getContextPath() + "/member/selectMemberOne.jsp");
 		
 		System.out.println("[debug] updateMemberAction.jsp 로직 종료");
 		

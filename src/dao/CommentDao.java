@@ -6,8 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import db.DBUtil;
 
+import common.DBUtil;
 import vo.Comment;
 
 public class CommentDao {

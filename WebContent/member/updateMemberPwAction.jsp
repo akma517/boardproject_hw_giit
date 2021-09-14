@@ -13,7 +13,7 @@
 	Member member = (Member)session.getAttribute("loginMember");
 	
 	if (member == null) {
-		response.sendRedirect("./index.jsp");
+		response.sendRedirect(request.getContextPath() + "/index.jsp");
 		System.out.println("[debug] updateMemberPwAction.jsp => index.jsp로 강제 이동: 로그인 하지 않은 멤버의 강제 접근을 막았습니다.");
 		return; 
 	}
@@ -27,7 +27,7 @@
 	
 	// 탈퇴 정보 유효성 검사
 	if (memberPw == null || memberPwNew == null) {
-		response.sendRedirect("./updateMemberPwForm.jsp");
+		response.sendRedirect(request.getContextPath() + "/member/updateMemberPwForm.jsp");
 		System.out.println("[debug] updateMemberPwAction.jsp => updateMemberPwForm.jsp로 강제 이동: 비밀번호 수정값에 null값이 있어 이전 페이지로 돌려보냈습니다.");
 		return; 
 	}
@@ -45,14 +45,14 @@
 	if (confirm==1) {
 		
 		System.out.println("[debug] updateMemberPwAction.jsp => 비밀번호 수정 성공");
-		response.sendRedirect("./selectMemberOne.jsp");
+		response.sendRedirect(request.getContextPath() + "/member/selectMemberOne.jsp");
 		
 		System.out.println("updateMemberPwAction.jsp 로직 종료");
 		
 		return;
 	} else {
 		System.out.println("[debug] updateMemberPwAction.jsp => 비밀번호 수정 실패 : 입력 정보를 다시 확인해 주세요.");
-		response.sendRedirect("./updateMemberPwForm.jsp");
+		response.sendRedirect(request.getContextPath() + "/member/updateMemberPwForm.jsp");
 		
 		System.out.println("[debug] updateMemberPwAction.jsp 로직 종료");		
 		
