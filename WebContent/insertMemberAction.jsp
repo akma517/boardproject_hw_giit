@@ -5,7 +5,7 @@
 <%
 	/* 사전작업 */
 	request.setCharacterEncoding("utf-8");
-	System.out.println("insertMemberAction.jsp 로직 진입");
+	System.out.println("[debug] insertMemberAction.jsp 로직 진입");
 	
 	/* 인증 방어 코드 : 로그인 전에만 페이지 열람 가능 */
 	// 만약 로그인한 멤버가 insertMemberAction.jsp에 접근할 시, index.jsp 페이지로 강제 이동시킨다.
@@ -61,7 +61,7 @@
 		response.sendRedirect("./index.jsp");
 		
 		
-		System.out.println("insertMemberAction.jsp 로직 종료");
+		System.out.println("[debug] insertMemberAction.jsp 로직 종료");
 		
 		return;
 	} else {
@@ -69,7 +69,7 @@
 		response.sendRedirect("./index.jsp");
 		
 		
-		System.out.println("insertMemberAction.jsp 로직 종료");
+		System.out.println("[debug] insertMemberAction.jsp 로직 종료");
 		
 		return;
 	}

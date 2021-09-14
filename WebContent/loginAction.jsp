@@ -8,7 +8,7 @@
 	// output(success): session => Member loginMember
 	// output(false): 
 	request.setCharacterEncoding("utf-8");
-	System.out.println("loginAction.jsp 로직 진입");	
+	System.out.println("[debug] loginAction.jsp 로직 진입");	
 	
 	/* 인증 방어 코드 : 로그인 전에만 페이지 열람 가능 */
 	// 만약 로그인한 멤버가 loginActionm.jsp에 접근하려고 할 시, index.jsp 페이지로 강제 이동시킨다.
@@ -48,7 +48,7 @@
 		System.out.println("[debug] loginAction.jsp => 로그인 실패 : 일치하는 멤버 정보가 없음");
 		response.sendRedirect("./loginForm.jsp");
 		
-		System.out.println("loginAction.jsp 로직 종료");	
+		System.out.println("[debug] loginAction.jsp 로직 종료");	
 		
 		return;
 		
@@ -64,7 +64,7 @@
 		
 		response.sendRedirect("./index.jsp");
 		
-		System.out.println("loginAction.jsp 로직 종료");	
+		System.out.println("[debug] loginAction.jsp 로직 종료");	
 		
 		return;
 		

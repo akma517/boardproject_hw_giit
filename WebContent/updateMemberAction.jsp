@@ -6,7 +6,7 @@
 <%
 	/* 사전작업 */
 	request.setCharacterEncoding("utf-8");
-	System.out.println("updateMemberAction.jsp 로직 진입");
+	System.out.println("[debug] updateMemberAction.jsp 로직 진입");
 	
 	/* 인증 방어 코드 : 로그인 후에만 페이지 열람 가능 */
 	// 만약 로그인하지 않은 멤버가 updateMemberAction.jsp에 접근하려고 할 시, index.jsp 페이지로 강제 이동시킨다.
@@ -61,7 +61,7 @@
 		System.out.println("[debug] updateMemberAction.jsp => 회원정보 수정 성공");
 		response.sendRedirect("./selectMemberOne.jsp");
 		
-		System.out.println("updateMemberAction.jsp 로직 종료");
+		System.out.println("[debug] updateMemberAction.jsp 로직 종료");
 		
 		return;
 	} else {
@@ -69,7 +69,7 @@
 		System.out.println("[debug] updateMemberAction.jsp => 회원정보 수정 실패 : 입력 정보를 다시 확인해 주세요.");
 		response.sendRedirect("./selectMemberOne.jsp");
 		
-		System.out.println("updateMemberAction.jsp 로직 종료");
+		System.out.println("[debug] updateMemberAction.jsp 로직 종료");
 		
 		return;
 	}

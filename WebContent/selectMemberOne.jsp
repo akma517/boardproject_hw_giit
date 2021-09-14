@@ -13,7 +13,7 @@
 <%
 	/* 사전작업 */
 	request.setCharacterEncoding("utf-8");
-	System.out.println("slelectMemberOne.jsp 로직 진입");
+	System.out.println("[debug] slelectMemberOne.jsp 로직 진입");
 	
 	/* 인증 방어 코드 : 로그인 전에만 페이지 열람 가능 */
 	// 만약 로그인하지 않은 멤버가 selectMemberOne.jsp에 접근하려고 할 시, index.jsp 페이지로 강제 이동시킨다.
@@ -65,7 +65,7 @@
 		</tbody>
 	</table>
 <%
-	System.out.println("slelectMemberOne.jsp 로직 종료");
+	System.out.println("[debug] slelectMemberOne.jsp 로직 종료");
 %>
 </body>
 </html>
